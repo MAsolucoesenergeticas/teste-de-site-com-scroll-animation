@@ -621,15 +621,14 @@ body > .menu { position: fixed !important; top: 0 !important; bottom: 0 !importa
   color: #fff;
 }
 
-.cena-video {
+.cena-video {           /* agora é o canvas */
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
   z-index: 0;
   background: var(--dark);
+  display: block;
 }
 
 .cena-overlay {
