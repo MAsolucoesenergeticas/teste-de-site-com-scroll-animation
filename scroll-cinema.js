@@ -34,12 +34,13 @@
     }, { passive: true });
 
     window.addEventListener('resize', atualizar);
+    window.addEventListener('orientationchange', atualizar);
     atualizar();
   }
 
   function init() {
-    var mq = window.matchMedia('(max-width:720px), (prefers-reduced-motion:reduce)');
-    if (mq.matches) return; // mobile/reduced motion: fica estático, sem scrub
+    var mqReduce = window.matchMedia('(prefers-reduced-motion:reduce)');
+    if (mqReduce.matches) return; // respeita acessibilidade em qualquer dispositivo
 
     var section = document.getElementById('cenaHero');
     var video   = document.getElementById('cenaVideo');
